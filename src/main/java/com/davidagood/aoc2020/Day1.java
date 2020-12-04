@@ -29,8 +29,8 @@ public class Day1 {
             System.out.println("No pair found which sums to 2020");
         } else {
             int[] pair = pairSumming2020.get();
-            System.out.println(String.format("Pair summing 2020; [%s, %s]", pair[0], pair[1]));
-            System.out.println(String.format("%s * %s == %s", pair[0], pair[1], pair[0] * pair[1]));
+            System.out.printf("Pair summing 2020; [%s, %s]%n", pair[0], pair[1]);
+            System.out.printf("%s * %s == %s%n", pair[0], pair[1], pair[0] * pair[1]);
         }
 
         Optional<int[]> tripleSumming2020 = this.findTripleSumming2020(values);
@@ -38,8 +38,8 @@ public class Day1 {
             System.out.println("No triple found which sums to 2020");
         } else {
             int[] triple = tripleSumming2020.get();
-            System.out.println(String.format("Triple summing 2020; [%s, %s, %s]", triple[0], triple[1], triple[2]));
-            System.out.println(String.format("%s * %s * %s == %s", triple[0], triple[1], triple[2], triple[0] * triple[1] * triple[2]));
+            System.out.printf("Triple summing 2020; [%s, %s, %s]%n", triple[0], triple[1], triple[2]);
+            System.out.printf("%s * %s * %s == %s%n", triple[0], triple[1], triple[2], triple[0] * triple[1] * triple[2]);
         }
 
     }
