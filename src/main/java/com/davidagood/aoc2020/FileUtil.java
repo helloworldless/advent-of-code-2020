@@ -23,6 +23,18 @@ public class FileUtil {
         }
     }
 
+    public static String readFileAsString(String resourceFileName) {
+        URL resource = FileUtil.class.getClassLoader().getResource(resourceFileName);
+        if (isNull(resource)) {
+            throw new FileNotFoundException("File not found: " + resourceFileName);
+        }
+        try {
+            return Files.readString(Path.of(resource.toURI()));
+        } catch (IOException | URISyntaxException e) {
+            throw new RuntimeException("Failed to read file lines; Error: " + e.getMessage());
+        }
+    }
+
     public static class FileNotFoundException extends RuntimeException {
         public FileNotFoundException(String message) {
             super(message);
